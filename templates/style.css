@@ -1,0 +1,64 @@
+img.background {
+  min-height: 100%;
+  min-width: 640px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* Зависит от размера изображения */
+  @media screen and (max-width: 640px){
+	img.bg {
+	  left: 50%;
+	  margin-left: -320px;
+	}
+  }
+}
+body {
+  font-family: Roboto, sans;
+}
+
+header {
+  text-shadow: 0 1px 8px rgba(0,0,0,.2);
+  position: absolute;
+  top: 24px;
+  left: 440px;
+}
+
+h1 {
+  color: rgba(255, 255, 255, .8);
+  font-size: 45px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  margin-bottom: 0;
+  font-size: 48px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, .8);
+}
+
+footer {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+a {
+  font-weight: lighter;
+  text-decoration: none;
+  color: rgba(255,255,255,.7);
+}
+
+a:hover {
+  color: #2196f3;
+}

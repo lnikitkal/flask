@@ -1,8 +1,9 @@
 import asyncio
 import random
+import json
 import discord
 
-TOKEN = "secret"
+TOKEN = "ODI1MzgwNTM4OTc3MzUzNzU5.YF9Fhw.7CJug2eavzk05OdzQxR5go1u6Aw"
 
 
 class YLBotClient(discord.Client):
@@ -24,12 +25,19 @@ class YLBotClient(discord.Client):
                 f"  отправить сообщение с текстом '/lib[путь до темы]'\n"
                 f" Например: /lib62 выведет информацию про функцию map")
             await message.channel.send(self.full_list())
+
         else:
             if '/lib' == message.content[:4]:
-                self.library(message.content)
+                await self.library(message.content, message)
 
-    def library(self, number):
-        print(number)
+    async def library(self, number, message):
+        try:
+            with open('list.json', encoding="utf-8") as cat_file:
+                f = cat_file.read()
+                data = json.loads(f)
+            await message.channel.send(data[str(number[4:])])
+        except KeyError:
+            await message.channel.send('Не удалось найти тему с таким номером')
 
     def full_list(self):
         list = open("list.txt", encoding="utf8")
