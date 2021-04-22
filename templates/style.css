@@ -70,12 +70,12 @@ p{
   padding: 20px 0px;
   text-align: center;
 }
-#layer{
+.layer{
     position:relative;
     top:0px;
     left:220px;
 }
-#text_fixed{
+.text_fixed{
 position: fixed
 }
 
@@ -87,4 +87,10 @@ margin-top: -5px;
 margin-right: 20px;
 margin-bottom: 30px;
 margin-left: 240px;
+}
+footer {
+  position: absolute;
+  bottom: 24px;
+  left: 75%;
+  transform: translateX(-50%);
 }

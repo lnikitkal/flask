@@ -3,7 +3,7 @@ import random
 import json
 import discord
 
-TOKEN = "ODI1MzgwNTM4OTc3MzUzNzU5.YF9Fhw.w2fIzwzT9IVOlAqNb8pLLDAp-aI"
+TOKEN = "и"
 
 
 class YLBotClient(discord.Client):
