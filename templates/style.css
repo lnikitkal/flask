@@ -53,9 +53,15 @@ footer {
 }
 
 a {
-  font-weight: lighter;
+  position: absolute;
+  color: rgba(0, 0, 0, .8);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+  padding: 20px 220px;
+  z-index: 2;
   text-decoration: none;
-  color: rgba(255,255,255,.7);
 }
 
 a:hover {
@@ -93,4 +99,7 @@ footer {
   bottom: 24px;
   left: 75%;
   transform: translateX(-50%);
+}
+#last{
+padding: 100px 0px;
 }

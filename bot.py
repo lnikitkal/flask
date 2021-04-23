@@ -3,7 +3,7 @@ import random
 import json
 import discord
 
-TOKEN = "и"
+TOKEN = "ODI1MzgwNTM4OTc3MzUzNzU5.YF9Fhw.QDWfCDA8qug5PAGMOuPYkmPhP_g"
 
 
 class YLBotClient(discord.Client):
@@ -15,7 +15,6 @@ class YLBotClient(discord.Client):
                 f'{guild.name}(id: {guild.id})')
 
     async def on_message(self, message):
-        global bot, user, smiles
         if message.author == self.user:
             return
         if '/help' == message.content:

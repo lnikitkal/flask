@@ -1,12 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>Бот «Programmer's assistant»</title>
+    <style>
+        img.background {
+  min-height: 100%;
+  min-width: 640px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  /* Зависит от размера изображения */
+  @media screen and (max-width: 640px){
+	img.bg {
+	  left: 50%;
+	  margin-left: -320px;
+	}
+  }
+}
+body {
+  font-family: Roboto, sans;
+  overflow-x:  hidden;
+}
+
+header {
+  text-shadow: 0 1px 8px rgba(0,0,0,.2);
+  position: absolute;
+}
+
+h1 {
+  color: rgba(255, 255, 255, .8);
+  font-size: 45px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0px 200px;
+  z-index: 2;
+}
+
+h2 {
+  color: rgba(0, 0, 0, .8);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+  padding: 20px 230px;
+}
+
+footer {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+a {
+  position: absolute;
+  color: rgba(0, 0, 0, .8);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+  padding: 20px 220px;
+  z-index: 2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2196f3;
+}
+p{
+  color: rgba(0, 0, 0, .8);
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+  padding: 20px 0px;
+  text-align: center;
+}
+.layer{
+    position:relative;
+    top:0px;
+    left:220px;
+}
+.text_fixed{
+position: fixed
+}
+
+#cont{
+padding: 65px 80px;
+}
+ul{
+margin-top: -5px;
+margin-right: 20px;
+margin-bottom: 30px;
+margin-left: 240px;
+}
+footer {
+  position: absolute;
+  bottom: 24px;
+  left: 75%;
+  transform: translateX(-50%);
+}
+#last{
+padding: 100px 0px;
+}
+    </style>
 </head>
 <body>
-<img src="back3.png" class="background">
+<img src='{{ url_for("static", filename="back3.png") }}' class="background">
 <header>
     <hgroup>
         <h1 class='text_fixed'><b>Бот «Programmer's assistant» и как им пользоваться</b></h1>
@@ -23,22 +129,25 @@
         </ul>
         <h2>Команда /help знакомит нас с командой /lib и выводит перечень тем, справку по которым можно получить</h2>
         <div class='layer'>
-            <img src="C:\Users\sweta\PycharmProjects\finalxflaskxprogect\help.jpg" alt="/help" width="1000">
+            <img src='{{ url_for("static", filename="help.jpg") }}' alt="/help" width="1000">
         </div>
-        <h2>Команда /lib[путь до темы] непосредсвенно выводит справку по теме, путь до которой указан в команде</h2>
+        <h2>Команда /lib[путь до темы] непосредственно выводит справку по теме, путь до которой указан в команде</h2>
         <div class='layer'>
-            <img src="C:\Users\sweta\PycharmProjects\finalxflaskxprogect\lib.jpg" alt="/help" width="1000">
+            <img src='{{ url_for("static", filename="lib.jpg") }}' alt="/help" width="1000">
         </div>
         <p><b>Кому нужен этот бот</b></p>
         <h2>В первую очередь бот будет полезен новичкам(Навальный не при чём), которые хотят освоить язык Python, например ученикам Яндекс.Лицея 1-го года</h2>
         <p><b>Почему бот удобен</b></p>
-        <h2>Бот удобен в первую очередь из-за скорости, не надо ускать нужный урок(тем более если<br>в его названии нет того, что ты ишешь), не надо яндексить запрос и искать сайт с<br>нужной вам информацией, а часто это процесс тяжелый, т.к. многие авторы статей<br>любят полить воды</h2>
+        <h2>Бот удобен в первую очередь из-за скорости, не надо искать нужный урок(тем более если<br>в его названии нет того, что ты ищешь), не надо яндексить запрос и искать сайт с<br>нужной вам информацией, а часто это процесс тяжелый, т.к. многие авторы статей<br>любят полить воды</h2>
         <div class='layer'>
-            <img src="C:\Users\sweta\PycharmProjects\finalxflaskxprogect\rofl_png.jpg" alt="/help" width="1000">
+            <img src='{{ url_for("static", filename="rofl_png.jpg") }}' alt="/help" width="1000">
         </div>
         <h2>Во вторую очередь бот удобен тем, что это бот, а это значит, что его можно добавить в беседу, где много новичков и убить сразу n-число зайцев сразу</h2>
         <p><b>Недостатки бота</b></p>
         <h2 style="text-align: center">*треск сверчков*</h2>
+        <p><b>Собсна сам бот</b></p>
+        <a href="https://discord.com/oauth2/authorize?client_id=825380538977353759&scope=bot&permissions=0" style="text-align: center">Барабанная дробь...... Вот и ссылочка на бота, теперь при желании вы можете добавить его на сервер дискорд</a>
+        <h2 style="text-align: center" id="last">ВАЖНО! У вас должно быть право добавления ботов на сервер</h2>
     </div>
     <footer><b>© 200г. до н.э. - 2077  ОАОААААО «SpaceX»</b></footer>
 </header>
